@@ -87,15 +87,18 @@ namespace Multi
 			 
 			 this.tableView.DataSource = new MovieListDataSource();
 			this.tableView.Delegate  = new MovieListDelegate();
-			
+			Console.WriteLine("called viewdidload");
 			
 			
 		}
 		
 		
+		
 		public override void ViewDidUnload ()
 		{
 			base.ViewDidUnload ();
+			
+			Console.WriteLine("called ViewDidUnload");
 			
 			// Clear any references to subviews of the main view in order to
 			// allow the Garbage Collector to collect them sooner.

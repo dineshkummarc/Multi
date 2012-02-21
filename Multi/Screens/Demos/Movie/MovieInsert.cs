@@ -23,9 +23,16 @@ namespace Multi
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.textView.Text = "";
 			
-			// Perform any additional setup after loading the view, typically from a nib.
+			this.btnSubmit.TouchUpInside += (sender, e) => { 
+				MovieService.Save (this.tbTitle.Text, this.tbRating.Text); 
+				this.textView.Text += string.Format("saved {0} \n", this.tbTitle.Text);
+				this.View.EndEditing (true);
+			};
 		}
+		
+		
 		
 		public override void ViewDidUnload ()
 		{

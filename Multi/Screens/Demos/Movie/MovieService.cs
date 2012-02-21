@@ -50,6 +50,24 @@ namespace Multi
 		}
 		  
 		
+		public static void Save (string title, string rating)
+		{
+			var connection = GetConnection ();
+			var date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+			var commands = new [] {
+				"INSERT into Movie (Id, Title, Rating, DateCreated) VALUES ( 4, '" + title + "', '" + rating + "', '"+date+"' )",};  
+			foreach (var cmd in commands) {
+				using (var c = connection.CreateCommand()) {
+					c.CommandText = cmd;
+					c.CommandType = CommandType.Text;
+					connection.Open ();
+					c.ExecuteNonQuery ();
+					connection.Close ();
+					Console.Error.WriteLine ("about to run    " + cmd.ToString ());
+				}
+			} 
+		}
+		
 		public static SqliteConnection GetConnection ()
 		{
 			var documents = Environment.GetFolderPath (

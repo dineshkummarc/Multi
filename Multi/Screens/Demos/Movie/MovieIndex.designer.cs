@@ -18,6 +18,9 @@ namespace Multi
 		MonoTouch.UIKit.UIButton btnSync { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UITextView textView { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnRemote { get; set; }
 
 		[Outlet]
@@ -36,6 +39,11 @@ namespace Multi
 			if (btnSync != null) {
 				btnSync.Dispose ();
 				btnSync = null;
+			}
+
+			if (textView != null) {
+				textView.Dispose ();
+				textView = null;
 			}
 
 			if (btnRemote != null) {
