@@ -69,21 +69,9 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Screens\HelloWorldScreen.cs" />
-    <Compile Include="Screens\HelloWorldScreen.designer.cs">
-      <DependentUpon>HelloWorldScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\HelloUniverseScreen.cs" />
-    <Compile Include="Screens\HelloUniverseScreen.designer.cs">
-      <DependentUpon>HelloUniverseScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\HomeScreen.cs" />
     <Compile Include="Screens\HomeScreen.designer.cs">
       <DependentUpon>HomeScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\HelloUsaScreen.cs" />
-    <Compile Include="Screens\HelloUsaScreen.designer.cs">
-      <DependentUpon>HelloUsaScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Demos\SqliteScreen.cs" />
     <Compile Include="Screens\Demos\SqliteScreen.designer.cs">
@@ -104,6 +92,18 @@
     <Compile Include="Screens\Demos\TableViewScreen.designer.cs">
       <DependentUpon>TableViewScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\BreadCrumbs\HelloUniverseScreen.cs" />
+    <Compile Include="Screens\BreadCrumbs\HelloUniverseScreen.designer.cs">
+      <DependentUpon>HelloUniverseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\BreadCrumbs\HelloUsaScreen.cs" />
+    <Compile Include="Screens\BreadCrumbs\HelloUsaScreen.designer.cs">
+      <DependentUpon>HelloUsaScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\BreadCrumbs\HelloWorldScreen.cs" />
+    <Compile Include="Screens\BreadCrumbs\HelloWorldScreen.designer.cs">
+      <DependentUpon>HelloWorldScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -111,16 +111,17 @@
     <Folder Include="Screens\Demos\" />
     <Folder Include="Tools\" />
     <Folder Include="Screens\Demos\NoXcode\" />
+    <Folder Include="Screens\BreadCrumbs\" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Screens\HelloWorldScreen.xib" />
-    <InterfaceDefinition Include="Screens\HelloUniverseScreen.xib" />
     <InterfaceDefinition Include="Screens\HomeScreen.xib" />
-    <InterfaceDefinition Include="Screens\HelloUsaScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\SqliteScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\FileSystemScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\ActionSheetScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\TableViewScreen.xib" />
+    <InterfaceDefinition Include="Screens\BreadCrumbs\HelloUniverseScreen.xib" />
+    <InterfaceDefinition Include="Screens\BreadCrumbs\HelloUsaScreen.xib" />
+    <InterfaceDefinition Include="Screens\BreadCrumbs\HelloWorldScreen.xib" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="paw.jpg" />
