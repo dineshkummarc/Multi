@@ -7,13 +7,25 @@ using System.Collections.Generic;
 
 namespace Multi
 {
+	
+	
+	public class DayData
+	{
+		public List<string> Entries { get; set; }
+		public string Title { get; set; }
+	}
+	
+	
+	
+	
 	public class TableViewDelegate : UITableViewDelegate
 	{
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
 		{
 			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
 			var dataSource = (TableViewDataSource) tableView.DataSource;
-			var alert = new UIAlertView("Row Selected", dataSource.Data[indexPath.Row], null, "Ok", null);
+			//var alert = new UIAlertView("Row Selected", dataSource.Data[indexPath.Row], null, "Ok", null);
+			var alert = new UIAlertView("Row Selected", dataSource.Data[indexPath.Section].Entries[indexPath.Row], null, "Ok", null);
 			alert.Show();
 		}
  
@@ -21,16 +33,33 @@ namespace Multi
 		
 	public class TableViewDataSource : UITableViewDataSource
 	{ 
-		public List<string> Data { get; set; } 
+		//public List<string> Data { get; set; } 
+		public List<DayData> Data { get; set; } 
 		public TableViewDataSource(){
-			Data = new List<string> {"100 grams","23 grams","4343 grams"};
+			//Data = new List<string> {"100 grams","23 grams","4343 grams"};
+			var day1 = new DayData();
+			day1.Title = "Day 1";
+			day1.Entries = new List<string> {"100 grams","23 grams","4343 grams"};
+			
+			var day2 = new DayData();
+			day2.Title = "Day 2";
+			day2.Entries = new List<string> {"100 grams","122 grams","23 grams","4343 grams"};
+			
+			var day3 = new DayData();
+			day3.Title = "Day 3";
+			day3.Entries = new List<string> {"100 grams","23 grams","4343 grams"};
+			
+			
+			Data = new List<DayData> {day1, day2, day3 };
+			
 		}
 		
 		#region implemented abstract members of MonoTouch.UIKit.UITableViewDataSource
 		public override int RowsInSection (UITableView tableView, int section)
 		{
 			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
-			return Data.Count;
+			//return Data.Count;
+			return Data[section].Entries.Count;
 		}
 
 		public override UITableViewCell GetCell (UITableView tableView, NSIndexPath indexPath)
@@ -41,11 +70,20 @@ namespace Multi
 			{
 				cell = new UITableViewCell(UITableViewCellStyle.Default, "cell");
 			}
-			cell.TextLabel.Text = Data[indexPath.Row];
+			//cell.TextLabel.Text = Data[indexPath.Row];
+			cell.TextLabel.Text = Data[indexPath.Section].Entries[indexPath.Row];
 			return cell;
 		}
 		#endregion
+
+		public override int NumberOfSections (UITableView tableView)
+		{
+			return Data.Count;
+			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
+		}
 	}
+	
+	
 	
 	public partial class TableViewScreen : UIViewController
 	{
