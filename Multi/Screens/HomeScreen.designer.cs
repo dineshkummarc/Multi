@@ -25,6 +25,9 @@ namespace Multi
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton btnAction { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton btnNoXcode { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -51,6 +54,11 @@ namespace Multi
 			if (btnAction != null) {
 				btnAction.Dispose ();
 				btnAction = null;
+			}
+
+			if (btnNoXcode != null) {
+				btnNoXcode.Dispose ();
+				btnNoXcode = null;
 			}
 		}
 	}

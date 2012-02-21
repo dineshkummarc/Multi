@@ -101,12 +101,14 @@
     <Compile Include="Screens\Demos\ActionSheetScreen.designer.cs">
       <DependentUpon>ActionSheetScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Demos\NoXcode\NoXcodeScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Screens\" />
     <Folder Include="Screens\Demos\" />
     <Folder Include="Tools\" />
+    <Folder Include="Screens\Demos\NoXcode\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Screens\HelloWorldScreen.xib" />

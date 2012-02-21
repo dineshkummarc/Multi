@@ -15,6 +15,7 @@ namespace Multi
 		SqliteScreen	sqliteScreen;
 		FileSystemScreen	fileSystemScreen;
 		ActionSheetScreen	actionSheetScreen;
+		NoXcodeScreen	noXcodeScreen;
 
 		
 		public HomeScreen () : base ("HomeScreen", null)
@@ -59,6 +60,13 @@ namespace Multi
 					this.helloUniverseScreen = new HelloUniverseScreen ();
 				}  
 				this.NavigationController.PushViewController (this.helloUniverseScreen, true);
+			};
+			//---- same thing, but for the hello universe screen
+			this.btnNoXcode.TouchUpInside += (sender, e) => {
+				if (this.noXcodeScreen == null) {
+					this.noXcodeScreen = new NoXcodeScreen ();
+				}  
+				this.NavigationController.PushViewController (this.noXcodeScreen, true);
 			};
 			
 			
