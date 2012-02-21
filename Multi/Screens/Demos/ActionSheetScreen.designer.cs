@@ -12,6 +12,9 @@ namespace Multi
 	partial class ActionSheetScreen
 	{
 		[Outlet]
+		MonoTouch.UIKit.UITextView textView { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnAction { get; set; }
 
 		[Outlet]
@@ -19,6 +22,11 @@ namespace Multi
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (textView != null) {
+				textView.Dispose ();
+				textView = null;
+			}
+
 			if (btnAction != null) {
 				btnAction.Dispose ();
 				btnAction = null;

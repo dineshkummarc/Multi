@@ -23,6 +23,7 @@ namespace Multi
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.textView.Text = "";
 			this.btnReset.TouchUpInside += (sender, e) => { 
 				var actionSheet = new UIActionSheet("Are you sure you want to reset ?", null, "Cancel", "Reset", "?");
 				actionSheet.Clicked += HandleActionSheetClicked;;
@@ -32,12 +33,13 @@ namespace Multi
 
 		void HandleActionSheetClicked (object sender, UIButtonEventArgs e)
 		{ 
-			if (e.ButtonIndex == 0) 
-				Console.WriteLine("reset Clicked"); 
-			else if (e.ButtonIndex == 1) 
-				Console.WriteLine("? Clicked"); 
-			else 
-				Console.WriteLine("Cancel Clicked"); 
+			if (e.ButtonIndex == 0) {
+				Console.WriteLine("reset Clicked"); this.textView.Text += "reset Clicked   "; 
+			}else if (e.ButtonIndex == 1) {
+				Console.WriteLine("? Clicked"); this.textView.Text += "? Clicked   "; 
+			}else{ 
+				Console.WriteLine("Cancel Clicked"); this.textView.Text += "cancel Clicked   "; 
+			}
 		}
 		
 		public override void ViewDidUnload ()
