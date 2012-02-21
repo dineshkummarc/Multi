@@ -1,20 +1,18 @@
 using System;
+using System.IO;
+using System.Text;
 using System.Drawing;
-
+using System.Data;
+using Mono.Data.Sqlite;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
 namespace Multi
 {
-	public partial class MovieIndex : UIViewController
+	public partial class MovieList : UIViewController
 	{
-		MovieInsert movieInsert;
-		MovieList movieList;
-		//MovieRemote movieRemote; 
-		
-		public MovieIndex () : base ("MovieIndex", null)
+		public MovieList () : base ("MovieList", null)
 		{
-			this.Title = "Movies";
 		}
 		
 		public override void DidReceiveMemoryWarning ()
@@ -29,28 +27,7 @@ namespace Multi
 		{
 			base.ViewDidLoad ();
 			
-				this.btnInsert.TouchUpInside += (sender, e) => {
-				if (this.movieInsert == null) {
-					this.movieInsert = new MovieInsert ();
-				}  
-				this.NavigationController.PushViewController (this.movieInsert, true);
-			};
-			
-			 
-			this.btnList.TouchUpInside += (sender, e) => {
-				if (this.movieList == null) {
-					this.movieList = new MovieList ();
-				}  
-				this.NavigationController.PushViewController (this.movieList, true);
-			};
-		/*
-			this.btnRemote.TouchUpInside += (sender, e) => {
-				if (this.movieRemote == null) {
-					this.movieRemote = new MovieRemote ();
-				}  
-				this.NavigationController.PushViewController (this.movieRemote, true);
-			};*/
-			
+			// Perform any additional setup after loading the view, typically from a nib.
 		}
 		
 		public override void ViewDidUnload ()
