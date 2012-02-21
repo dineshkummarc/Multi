@@ -114,6 +114,10 @@
       <DependentUpon>MovieList.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Demos\Movie\Movie.cs" />
+    <Compile Include="Screens\Demos\Movie\MovieInsert.cs" />
+    <Compile Include="Screens\Demos\Movie\MovieInsert.designer.cs">
+      <DependentUpon>MovieInsert.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -135,6 +139,7 @@
     <InterfaceDefinition Include="Screens\BreadCrumbs\HelloWorldScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\Movie\MovieIndex.xib" />
     <InterfaceDefinition Include="Screens\Demos\Movie\MovieList.xib" />
+    <InterfaceDefinition Include="Screens\Demos\Movie\MovieInsert.xib" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="paw.jpg" />

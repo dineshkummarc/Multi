@@ -11,6 +11,8 @@ namespace Multi
 		
 		MovieList movieList;
 		//MovieRemote movieRemote; 
+		MovieInsert movieInsert;
+		
 		
 		public MovieIndex () : base ("MovieIndex", null)
 		{
@@ -28,15 +30,14 @@ namespace Multi
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			/*
+			
 			this.btnInsert.TouchUpInside += (sender, e) => {
 				if (this.movieInsert == null) {
 					this.movieInsert = new MovieInsert ();
 				}  
 				this.NavigationController.PushViewController (this.movieInsert, true);
-			};*/
+			};
 			
-			 
 			this.btnList.TouchUpInside += (sender, e) => {
 				if (this.movieList == null) {
 					this.movieList = new MovieList ();
