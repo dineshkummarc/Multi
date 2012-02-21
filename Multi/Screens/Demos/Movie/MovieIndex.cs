@@ -8,7 +8,7 @@ namespace Multi
 {
 	public partial class MovieIndex : UIViewController
 	{
-		MovieInsert movieInsert;
+		
 		MovieList movieList;
 		//MovieRemote movieRemote; 
 		
@@ -28,13 +28,13 @@ namespace Multi
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			
-				this.btnInsert.TouchUpInside += (sender, e) => {
+			/*
+			this.btnInsert.TouchUpInside += (sender, e) => {
 				if (this.movieInsert == null) {
 					this.movieInsert = new MovieInsert ();
 				}  
 				this.NavigationController.PushViewController (this.movieInsert, true);
-			};
+			};*/
 			
 			 
 			this.btnList.TouchUpInside += (sender, e) => {
@@ -43,6 +43,15 @@ namespace Multi
 				}  
 				this.NavigationController.PushViewController (this.movieList, true);
 			};
+			
+			
+			
+			this.btnClear.TouchUpInside += (sender, e) => { 
+				var a = new UIAlertView("Clear ?", "are you sure you want to clear the db?", null, "cancel", "OK");
+				a.Clicked += HandleAClicked;
+				a.Show();
+			}; 
+			
 		/*
 			this.btnRemote.TouchUpInside += (sender, e) => {
 				if (this.movieRemote == null) {
@@ -52,6 +61,22 @@ namespace Multi
 			};*/
 			
 		}
+		
+		
+		void HandleAClicked (object sender, UIButtonEventArgs e)
+		{
+			if (e.ButtonIndex == 0)
+			{
+				Console.WriteLine("Cancel Clicked");
+			}
+			else
+			{
+				Console.WriteLine("Ok Clicked");
+				MovieService.CleanDb();
+			}
+		}
+		
+		
 		
 		public override void ViewDidUnload ()
 		{

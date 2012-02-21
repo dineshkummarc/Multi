@@ -87,7 +87,11 @@ namespace Multi
 			 
 			 this.tableView.DataSource = new MovieListDataSource();
 			this.tableView.Delegate  = new MovieListDelegate();
+			
+			
+			
 		}
+		
 		
 		public override void ViewDidUnload ()
 		{

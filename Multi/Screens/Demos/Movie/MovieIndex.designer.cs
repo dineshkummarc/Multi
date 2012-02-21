@@ -12,6 +12,9 @@ namespace Multi
 	partial class MovieIndex
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnClear { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnSync { get; set; }
 
 		[Outlet]
@@ -25,6 +28,11 @@ namespace Multi
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnClear != null) {
+				btnClear.Dispose ();
+				btnClear = null;
+			}
+
 			if (btnSync != null) {
 				btnSync.Dispose ();
 				btnSync = null;

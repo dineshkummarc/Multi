@@ -39,6 +39,15 @@ namespace Multi
 			return list;
 		}
 		
+		public static void CleanDb()
+		{ 
+				var documents = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
+				string db = Path.Combine (documents, MovieService.dbName);
+				bool exists = File.Exists (db); 
+				if (exists) {
+					File.Delete (db);
+				} 
+		}
 		  
 		
 		public static SqliteConnection GetConnection ()
