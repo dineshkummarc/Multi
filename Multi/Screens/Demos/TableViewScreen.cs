@@ -81,6 +81,12 @@ namespace Multi
 			return Data.Count;
 			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
 		}
+
+		public override string TitleForHeader (UITableView tableView, int section)
+		{
+			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
+			return Data[section].Title;
+		}
 	}
 	
 	
