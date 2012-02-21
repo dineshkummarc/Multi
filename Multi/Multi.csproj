@@ -102,6 +102,10 @@
       <DependentUpon>ActionSheetScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Demos\NoXcode\NoXcodeScreen.cs" />
+    <Compile Include="Screens\Demos\TableViewScreen.cs" />
+    <Compile Include="Screens\Demos\TableViewScreen.designer.cs">
+      <DependentUpon>TableViewScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -118,5 +122,6 @@
     <InterfaceDefinition Include="Screens\Demos\SqliteScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\FileSystemScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\ActionSheetScreen.xib" />
+    <InterfaceDefinition Include="Screens\Demos\TableViewScreen.xib" />
   </ItemGroup>
 </Project>

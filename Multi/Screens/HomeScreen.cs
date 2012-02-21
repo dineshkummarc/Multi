@@ -16,6 +16,7 @@ namespace Multi
 		FileSystemScreen	fileSystemScreen;
 		ActionSheetScreen	actionSheetScreen;
 		NoXcodeScreen	noXcodeScreen;
+		TableViewScreen tableViewScreen;
 
 		
 		public HomeScreen () : base ("HomeScreen", null)
@@ -71,6 +72,12 @@ namespace Multi
 			
 			
 			
+			this.btnTable.TouchUpInside += (sender, e) => {
+				if (this.tableViewScreen == null){
+					this.tableViewScreen = new TableViewScreen();
+				}
+				this.NavigationController.PushViewController (this.tableViewScreen, true);
+			};
 			this.btnSqlite.TouchUpInside += (sender, e) => {
 				if (this.sqliteScreen == null){
 					this.sqliteScreen = new SqliteScreen();
