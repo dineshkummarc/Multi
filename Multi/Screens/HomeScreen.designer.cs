@@ -18,6 +18,9 @@ namespace Multi
 		MonoTouch.UIKit.UIButton btnFiles { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnMovie { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnSqlite { get; set; }
 
 		[Outlet]
@@ -42,6 +45,11 @@ namespace Multi
 			if (btnFiles != null) {
 				btnFiles.Dispose ();
 				btnFiles = null;
+			}
+
+			if (btnMovie != null) {
+				btnMovie.Dispose ();
+				btnMovie = null;
 			}
 
 			if (btnSqlite != null) {

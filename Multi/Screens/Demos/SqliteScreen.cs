@@ -87,8 +87,7 @@ namespace Multi
 				using (var reader = cmd.ExecuteReader ()) {
 					while (reader.Read ()) {
 						Console.Error.Write ("(Row "); 
-						for (int i = 0; i < reader.FieldCount; ++i) { 
-							//Write (reader, i);
+						for (int i = 0; i < reader.FieldCount; ++i) {  
 							var name = reader.GetName (i);
 							var val = reader [i];
 							Console.Error.Write ("[{0}:'{1}']", name, val); 

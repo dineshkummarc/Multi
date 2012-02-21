@@ -17,6 +17,7 @@ namespace Multi
 		ActionSheetScreen	actionSheetScreen;
 		NoXcodeScreen	noXcodeScreen;
 		TableViewScreen tableViewScreen;
+		MovieIndex movieIndex;
 
 		
 		public HomeScreen () : base ("HomeScreen", null)
@@ -70,6 +71,13 @@ namespace Multi
 				this.NavigationController.PushViewController (this.noXcodeScreen, true);
 			};
 			
+			
+			this.btnMovie.TouchUpInside += (sender, e) => {
+				if (this.movieIndex == null) {
+					this.movieIndex = new MovieIndex ();
+				}  
+				this.NavigationController.PushViewController (this.movieIndex, true);
+			};
 			
 			
 			this.btnTable.TouchUpInside += (sender, e) => {
