@@ -12,10 +12,18 @@ namespace Multi
 	partial class MovieList
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnLoad { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITableView tableView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnLoad != null) {
+				btnLoad.Dispose ();
+				btnLoad = null;
+			}
+
 			if (tableView != null) {
 				tableView.Dispose ();
 				tableView = null;
