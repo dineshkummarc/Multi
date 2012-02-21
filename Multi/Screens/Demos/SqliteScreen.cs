@@ -25,8 +25,7 @@ namespace Multi
 		}
 		
 		public override void ViewDidLoad ()
-		{
-			
+		{ 
 			this.btnSave.TouchUpInside += (sender, e) => { 
 				this.WritePersonInDb (this.tbFirst.Text, this.tbLast.Text);
 				this.tfOutput.Text = ReadFromDb();
@@ -41,12 +40,11 @@ namespace Multi
 					File.Delete (db);
 				}
 				this.tfOutput.Text = ReadFromDb();
-			};
-			
+			}; 
 			base.ViewDidLoad (); 
 		}
 		
-		public   void WritePersonInDb (string firstName, string email)
+		public void WritePersonInDb (string firstName, string email)
 		{
 			var connection = GetConnection ();
 			var commands = new [] {"INSERT into people (PersonID, FirstName, LastName) VALUES ( 4, '" + firstName + "', '" + email + "')",};  

@@ -89,6 +89,10 @@
     <Compile Include="Screens\Demos\SqliteScreen.designer.cs">
       <DependentUpon>SqliteScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Demos\FileSystemScreen.cs" />
+    <Compile Include="Screens\Demos\FileSystemScreen.designer.cs">
+      <DependentUpon>FileSystemScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -101,5 +105,6 @@
     <InterfaceDefinition Include="Screens\HomeScreen.xib" />
     <InterfaceDefinition Include="Screens\HelloUsaScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\SqliteScreen.xib" />
+    <InterfaceDefinition Include="Screens\Demos\FileSystemScreen.xib" />
   </ItemGroup>
 </Project>
