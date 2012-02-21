@@ -117,6 +117,7 @@
     <Compile Include="Screens\Demos\Movie\MovieList.designer.cs">
       <DependentUpon>MovieList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Demos\Movie\Movie.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
