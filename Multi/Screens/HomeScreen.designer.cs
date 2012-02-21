@@ -22,6 +22,9 @@ namespace Multi
 
 		[Outlet]
 		MonoTouch.UIKit.UIButton btnUniverse { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton btnAction { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -43,6 +46,11 @@ namespace Multi
 			if (btnUniverse != null) {
 				btnUniverse.Dispose ();
 				btnUniverse = null;
+			}
+
+			if (btnAction != null) {
+				btnAction.Dispose ();
+				btnAction = null;
 			}
 		}
 	}

@@ -97,6 +97,10 @@
     </Compile>
     <Compile Include="Tools\SampleCode.cs" />
     <Compile Include="Tools\TestXml.cs" />
+    <Compile Include="Screens\Demos\ActionSheetScreen.cs" />
+    <Compile Include="Screens\Demos\ActionSheetScreen.designer.cs">
+      <DependentUpon>ActionSheetScreen.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -111,5 +115,6 @@
     <InterfaceDefinition Include="Screens\HelloUsaScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\SqliteScreen.xib" />
     <InterfaceDefinition Include="Screens\Demos\FileSystemScreen.xib" />
+    <InterfaceDefinition Include="Screens\Demos\ActionSheetScreen.xib" />
   </ItemGroup>
 </Project>

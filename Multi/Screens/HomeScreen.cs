@@ -14,6 +14,7 @@ namespace Multi
 	    HelloUniverseScreen helloUniverseScreen;
 		SqliteScreen	sqliteScreen;
 		FileSystemScreen	fileSystemScreen;
+		ActionSheetScreen	actionSheetScreen;
 
 		
 		public HomeScreen () : base ("HomeScreen", null)
@@ -73,6 +74,12 @@ namespace Multi
 					this.fileSystemScreen = new FileSystemScreen();
 				}
 				this.NavigationController.PushViewController (this.fileSystemScreen, true);
+			};
+			this.btnAction.TouchUpInside += (sender, e) => {
+				if (this.actionSheetScreen == null){
+					this.actionSheetScreen = new ActionSheetScreen();
+				}
+				this.NavigationController.PushViewController (this.actionSheetScreen, true);
 			};
 		}
 		
