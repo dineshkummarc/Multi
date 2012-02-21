@@ -65,6 +65,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
+    <None Include="TestData\ReadMe.txt" />
+    <None Include="TestData\Test.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -93,11 +95,14 @@
     <Compile Include="Screens\Demos\FileSystemScreen.designer.cs">
       <DependentUpon>FileSystemScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\SampleCode.cs" />
+    <Compile Include="Tools\TestXml.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Screens\" />
     <Folder Include="Screens\Demos\" />
+    <Folder Include="Tools\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Screens\HelloWorldScreen.xib" />
