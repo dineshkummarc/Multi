@@ -33,6 +33,22 @@ namespace Multi
 			};
 			
 			this.btnClear.TouchUpInside += (sender, e) => { 
+				var a = new UIAlertView("Clear ?", "are you sure you want to clear the db?", null, "cancel", "OK");
+				a.Clicked += HandleAClicked;
+				a.Show();
+			}; 
+			base.ViewDidLoad (); 
+		}
+
+		void HandleAClicked (object sender, UIButtonEventArgs e)
+		{
+			if (e.ButtonIndex == 0)
+			{
+				Console.WriteLine("Cancel Clicked");
+			}
+			else
+			{
+				Console.WriteLine("Ok Clicked");
 				var documents = Environment.GetFolderPath (Environment.SpecialFolder.Personal);
 				string db = Path.Combine (documents, "mydb.db3");
 				bool exists = File.Exists (db); 
@@ -40,8 +56,7 @@ namespace Multi
 					File.Delete (db);
 				}
 				this.tfOutput.Text = ReadFromDb();
-			}; 
-			base.ViewDidLoad (); 
+			}
 		}
 		
 		public void WritePersonInDb (string firstName, string email)
