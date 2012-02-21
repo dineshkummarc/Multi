@@ -12,6 +12,9 @@ namespace Multi
 	partial class HomeScreen
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnSqlite { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnWorld { get; set; }
 
 		[Outlet]
@@ -19,6 +22,11 @@ namespace Multi
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnSqlite != null) {
+				btnSqlite.Dispose ();
+				btnSqlite = null;
+			}
+
 			if (btnWorld != null) {
 				btnWorld.Dispose ();
 				btnWorld = null;
