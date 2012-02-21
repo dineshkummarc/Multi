@@ -72,7 +72,11 @@ namespace Multi
 			}
 			//cell.TextLabel.Text = Data[indexPath.Row];
 			cell.TextLabel.Text = Data[indexPath.Section].Entries[indexPath.Row]; 
-			cell.ImageView.Image = new UIImage("Paw.jpg");
+			cell.ImageView.Image = new UIImage("./Screens/Demos/blackpaw.png");
+			if (indexPath.Row % 3 == 1){
+				cell.ImageView.Image = new UIImage("./paw.jpg");
+			}
+				
 			cell.Accessory =   UITableViewCellAccessory.DetailDisclosureButton;
 			
 			return cell;

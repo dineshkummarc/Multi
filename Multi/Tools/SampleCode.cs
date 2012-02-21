@@ -45,22 +45,26 @@ namespace Multi
 
 			// Sample code from the article
 			var fileOrDirectory = Directory.EnumerateFileSystemEntries("./");
+			//var fileOrDirectory = Directory.EnumerateDirectories("./");
 			//var path = Directory.g.("./");
 			//Console.WriteLine("path=" + path);
 			foreach (var entry in fileOrDirectory) {
-				Console.WriteLine(entry);
-			}
-			
-			// Output to app UITextView
-			foreach (var entry in fileOrDirectory) {
+				Console.WriteLine(entry); 
 				display.Text += entry + Environment.NewLine;
-			}
+				
+				/*var dir2 = Directory.EnumerateFiles("./" + entry);
+				foreach( var fileName in dir2)
+				{ 
+					Console.WriteLine(fileName); 
+					display.Text += "    " + fileName + Environment.NewLine;
+				}*/
+			} 
 		}
 
 		public static void ReadXml(UITextView display)
 		{
 			display.Text = "";
-			/*
+			
 			// Sample code from the article (doesn't output any values)
 			using (TextReader reader = new StreamReader("TestData/Test.xml")) {
 				XmlSerializer serializer = new XmlSerializer(typeof(TestXml));
@@ -76,7 +80,7 @@ namespace Multi
 						+ "-----------------" + Environment.NewLine
 						+ "Title: " + xml.Title + Environment.NewLine
 						+ "Description: " + xml.Description;
-			}*/
+			}
 		}
 
 		public static void WriteFile(UITextView display)

@@ -35,7 +35,7 @@ namespace Multi
 			btnFiles.Frame = new RectangleF(10,10,145,50);
 			btnFiles.SetTitle("Open 'ReadMe.txt'", UIControlState.Normal);
 			//btnFiles.Font.SetValueForKey(NSObject., "green");
-			btnFiles.Enabled = false;
+			//btnFiles.Enabled = false;
 			
 			btnDirectories = UIButton.FromType(UIButtonType.RoundedRect);
 			btnDirectories.Frame = new RectangleF(10,70,145,50);
@@ -44,7 +44,7 @@ namespace Multi
 			btnXml = UIButton.FromType(UIButtonType.RoundedRect);
 			btnXml.Frame = new RectangleF(165,10,145,50);
 			btnXml.SetTitle("Open 'Test.xml'", UIControlState.Normal);
-			btnXml.Enabled = false;
+			//btnXml.Enabled = false;
 			
 			
 			btnAll = UIButton.FromType(UIButtonType.RoundedRect);

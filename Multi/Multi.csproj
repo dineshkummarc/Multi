@@ -65,8 +65,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="TestData\ReadMe.txt" />
-    <None Include="TestData\Test.xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -126,5 +124,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paw.jpg" />
+    <Content Include="Screens\Demos\blackpaw.png" />
+    <Content Include="TestData\ReadMe.txt" />
+    <Content Include="TestData\Test.xml" />
   </ItemGroup>
 </Project>
