@@ -71,7 +71,10 @@ namespace Multi
 				cell = new UITableViewCell(UITableViewCellStyle.Default, "cell");
 			}
 			//cell.TextLabel.Text = Data[indexPath.Row];
-			cell.TextLabel.Text = Data[indexPath.Section].Entries[indexPath.Row];
+			cell.TextLabel.Text = Data[indexPath.Section].Entries[indexPath.Row]; 
+			cell.ImageView.Image = new UIImage("Paw.jpg");
+			cell.Accessory =   UITableViewCellAccessory.DetailDisclosureButton;
+			
 			return cell;
 		}
 		#endregion
@@ -86,6 +89,12 @@ namespace Multi
 		{
 			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
 			return Data[section].Title;
+		}
+
+		public override string TitleForFooter (UITableView tableView, int section)
+		{
+			// TODO: Implement - see: http://go-mono.com/docs/index.aspx?link=T%3aMonoTouch.Foundation.ModelAttribute
+			return "footer";
 		}
 	}
 	
