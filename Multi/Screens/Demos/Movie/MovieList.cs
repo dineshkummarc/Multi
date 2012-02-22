@@ -85,15 +85,37 @@ namespace Multi
 		{
 			base.ViewDidLoad ();
 			 
-			 this.tableView.DataSource = new MovieListDataSource();
-			this.tableView.Delegate  = new MovieListDelegate();
 			Console.WriteLine("called viewdidload");
 			
 			
+			 this.tableView.DataSource = new MovieListDataSource();
+			this.tableView.Delegate  = new MovieListDelegate();
 		}
 		
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			Console.WriteLine("called ViewDidAppear");
+			
+		}
+		public override void LoadView ()
+		{
+			base.LoadView ();
+			
+			Console.WriteLine("called LoadView");
+		}
+		public override void ViewDidDisappear (bool animated)
+		{
+			base.ViewDidDisappear (animated);
+			Console.WriteLine("called ViewDidDisappear");
+		}
 		
-		
+		public override void ViewWillUnload ()
+		{
+			base.ViewWillUnload ();
+			Console.WriteLine("called ViewWillUnload");
+		}
+		 
 		public override void ViewDidUnload ()
 		{
 			base.ViewDidUnload ();
