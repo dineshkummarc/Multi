@@ -92,6 +92,7 @@ namespace Multi
 			this.tableView.Delegate  = new MovieListDelegate();
 		}
 		
+		
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);

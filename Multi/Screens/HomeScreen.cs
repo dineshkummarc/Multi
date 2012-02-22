@@ -18,6 +18,7 @@ namespace Multi
 		NoXcodeScreen	noXcodeScreen;
 		TableViewScreen tableViewScreen;
 		MovieIndex movieIndex;
+		WebServiceIndex webServiceIndex;
 
 		
 		public HomeScreen () : base ("HomeScreen", null)
@@ -77,6 +78,12 @@ namespace Multi
 					this.movieIndex = new MovieIndex ();
 				}  
 				this.NavigationController.PushViewController (this.movieIndex, true);
+			};
+			this.btnWebServices.TouchUpInside += (sender, e) => {
+				if (this.webServiceIndex == null) {
+					this.webServiceIndex = new WebServiceIndex ();
+				}  
+				this.NavigationController.PushViewController (this.webServiceIndex, true);
 			};
 			
 			

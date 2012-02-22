@@ -118,6 +118,14 @@
     <Compile Include="Screens\Demos\Movie\MovieInsert.designer.cs">
       <DependentUpon>MovieInsert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Demos\WebServices\ConsumeScreen.cs" />
+    <Compile Include="Screens\Demos\WebServices\ConsumeScreen.designer.cs">
+      <DependentUpon>ConsumeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Demos\WebServices\WebServiceIndex.cs" />
+    <Compile Include="Screens\Demos\WebServices\WebServiceIndex.designer.cs">
+      <DependentUpon>WebServiceIndex.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -127,6 +135,7 @@
     <Folder Include="Screens\Demos\NoXcode\" />
     <Folder Include="Screens\BreadCrumbs\" />
     <Folder Include="Screens\Demos\Movie\" />
+    <Folder Include="Screens\Demos\WebServices\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Screens\HomeScreen.xib" />
@@ -140,6 +149,8 @@
     <InterfaceDefinition Include="Screens\Demos\Movie\MovieIndex.xib" />
     <InterfaceDefinition Include="Screens\Demos\Movie\MovieList.xib" />
     <InterfaceDefinition Include="Screens\Demos\Movie\MovieInsert.xib" />
+    <InterfaceDefinition Include="Screens\Demos\WebServices\ConsumeScreen.xib" />
+    <InterfaceDefinition Include="Screens\Demos\WebServices\WebServiceIndex.xib" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="paw.jpg" />
