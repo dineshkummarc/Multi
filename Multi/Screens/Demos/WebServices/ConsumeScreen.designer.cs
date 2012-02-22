@@ -19,6 +19,9 @@ namespace Multi
 
 		[Outlet]
 		MonoTouch.UIKit.UITextView textView { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton btnWebRef { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
@@ -35,6 +38,11 @@ namespace Multi
 			if (textView != null) {
 				textView.Dispose ();
 				textView = null;
+			}
+
+			if (btnWebRef != null) {
+				btnWebRef.Dispose ();
+				btnWebRef = null;
 			}
 		}
 	}
