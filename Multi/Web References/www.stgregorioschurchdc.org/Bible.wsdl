@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://www.stgregorioschurchdc.org/Bible" xmlns:tns="http://www.stgregorioschurchdc.org/Bible" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Bible" targetNamespace="http://www.stgregorioschurchdc.org/Bible" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types />
+  <message name="BibleVerses">
+    <part name="from" type="xsd:string" />
+  </message>
+  <message name="BibleVersesResponse">
+    <part name="verses" type="xsd:string" />
+  </message>
+  <portType name="BibleVersesSoapPort">
+    <operation name="read_bible" parameterOrder="from">
+      <input message="tns:BibleVerses" />
+      <output message="tns:BibleVersesResponse" />
+    </operation>
+  </portType>
+  <binding name="BibleVersesSoapBinding" type="tns:BibleVersesSoapPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="read_bible">
+      <soap:operation soapAction="http://www.stgregorioschurchdc.org/Bible#read_bible" />
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.stgregorioschurchdc.org/Bible" use="encoded" />
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://www.stgregorioschurchdc.org/Bible" use="encoded" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Bible">
+    <port name="BibleVersesSoapPort" binding="tns:BibleVersesSoapBinding">
+      <soap:address location="http://www.stgregorioschurchdc.org/cgi/websvcbible.cgi" />
+    </port>
+  </service>
+</definitions>
