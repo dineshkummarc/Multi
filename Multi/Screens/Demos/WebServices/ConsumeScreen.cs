@@ -53,10 +53,16 @@ namespace Multi
 			};
 			
 			this.btnWebRef.TouchUpInside += (sender, e) => {
-				Console.WriteLine("inside - btnRestSharp.TouchUpInside----");
-				var service = new Multi.www.stgregorioschurchdc.org.Bible();
-				this.textView.Text = service.read_bible("John 3:16"); 
+				var begin = DateTime.Now;
+				var service = new Multi.www.stgregorioschurchdc.org.Bible(); 
+				this.textView.Text = service.read_bible("John 3:16");
+				//NSThread.SleepFor(1);
+				var end = DateTime.Now;
+				Console.WriteLine("called service.read_bible  time:{0}", end - begin  );
+				
 			};
+			
+			
 			this.btnRestSharp.TouchUpInside += (sender, e) => {
 				/*var request = new RestRequest(string.Format("{0}/allinfo", rxcui));
 				request.RequestFormat = DataFormat.Json;
