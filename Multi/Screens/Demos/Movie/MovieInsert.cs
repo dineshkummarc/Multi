@@ -27,7 +27,7 @@ namespace Multi
 			
 			this.btnSubmit.TouchUpInside += (sender, e) => { 
 				MovieService.Save (this.tbTitle.Text, this.tbRating.Text); 
-				this.textView.Text += string.Format("saved {0} \n", this.tbTitle.Text);
+				this.textView.Text = string.Format("saved {0} \n{1}  ", this.tbTitle.Text ,  this.textView.Text);
 				this.View.EndEditing (true);
 			};
 		}

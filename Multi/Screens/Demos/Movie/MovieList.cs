@@ -92,6 +92,14 @@ namespace Multi
 			this.tableView.Delegate  = new MovieListDelegate();
 		}
 		
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (animated);
+			Console.WriteLine("called ViewWillAppear");
+			
+			 this.tableView.DataSource = new MovieListDataSource();
+			this.tableView.ReloadData();
+		}
 		
 		public override void ViewDidAppear (bool animated)
 		{
