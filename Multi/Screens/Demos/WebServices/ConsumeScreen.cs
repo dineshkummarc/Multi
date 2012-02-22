@@ -4,7 +4,7 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Net;
-using System.IO;
+using System.IO; 
 
 namespace Multi
 {
@@ -52,6 +52,11 @@ namespace Multi
 				} 
 			};
 			
+			this.btnWebRef.TouchUpInside += (sender, e) => {
+				Console.WriteLine("inside - btnRestSharp.TouchUpInside----");
+				var service = new Multi.www.stgregorioschurchdc.org.Bible();
+				this.textView.Text = service.read_bible("John 3:16"); 
+			};
 			this.btnRestSharp.TouchUpInside += (sender, e) => {
 				/*var request = new RestRequest(string.Format("{0}/allinfo", rxcui));
 				request.RequestFormat = DataFormat.Json;
@@ -62,10 +67,7 @@ namespace Multi
 				rxTerm = DeserializeRxTerm(response.Content);*/
 				Console.WriteLine("Disabled right now check - btnRestSharp.TouchUpInside----");
 			};
-			
-			this.btnWebRef.TouchUpInside += (sender, e) => { 
-				Console.WriteLine("Disabled right now check - btnWebRef.TouchUpInside----");
-			}; 
+			 
 		}
 		
 		public override void ViewDidUnload ()
